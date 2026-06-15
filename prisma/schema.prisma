@@ -1,0 +1,112 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+}
+
+model StylistProfile {
+  id        String   @id @default(cuid())
+  bio       String
+  photoUrl  String?
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id              String    @id @default(cuid())
+  name            String
+  description     String
+  price           Float
+  durationMinutes Int
+  isActive        Boolean   @default(true)
+  isAddon         Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  bookings        Booking[]
+}
+
+model Booking {
+  id                    String       @id @default(cuid())
+  serviceId             String
+  service               Service      @relation(fields: [serviceId], references: [id])
+  clientName            String
+  clientEmail           String
+  clientPhone           String
+  date                  String
+  timeSlot              String
+  status                String       @default("PENDING")
+  isExpress             Boolean      @default(false)
+  depositPaid           Boolean      @default(false)
+  depositAmount         Float?
+  stripePaymentIntentId String?
+  stripeSessionId       String?
+  inspirationPhotoUrls  String       @default("[]")
+  addonServiceIds       String       @default("[]")
+  addonTotal            Float        @default(0)
+  notes                 String?
+  googleCalendarEventId String?
+  discountCodeId        String?
+  discountCode          DiscountCode? @relation(fields: [discountCodeId], references: [id])
+  discountAmount        Float?
+  createdAt             DateTime     @default(now())
+  updatedAt             DateTime     @updatedAt
+
+  @@unique([date, timeSlot])
+}
+
+model TimeSlotConfig {
+  id                  String @id @default(cuid())
+  dayOfWeek           Int
+  startTime           String
+  endTime             String
+  slotDurationMinutes Int    @default(60)
+}
+
+model BlockedSlot {
+  id       String @id @default(cuid())
+  date     String
+  timeSlot String
+}
+
+model DiscountCode {
+  id         String    @id @default(cuid())
+  code       String    @unique
+  type       String    @default("FLAT")
+  value      Float
+  expiresAt  DateTime?
+  isActive   Boolean   @default(true)
+  usageCount Int       @default(0)
+  createdAt  DateTime  @default(now())
+  bookings   Booking[]
+}
+
+model Testimonial {
+  id              String   @id @default(cuid())
+  clientFirstName String
+  serviceReceived String
+  rating          Int
+  quote           String
+  isVisible       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model SiteSettings {
+  id                  String   @id @default(cuid())
+  requireDeposit      Boolean  @default(false)
+  depositAmount       Float    @default(25)
+  depositType         String   @default("FLAT")
+  expressUpcharge     Float    @default(15)
+  expressUpchargeType String   @default("FLAT")
+  googleRefreshToken  String?
+  googleSheetsId      String?
+  updatedAt           DateTime @updatedAt
+}

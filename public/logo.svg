@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <g stroke="#B07D6C" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- HEART outline formed by electrical cord -->
+    <!-- Right lobe of heart -->
+    <path d="M100 162 C128 142 170 114 172 80 C174 54 158 36 140 36 C126 36 114 46 108 58"
+          stroke-width="3.2"/>
+    <!-- Left lobe of heart -->
+    <path d="M92 58 C86 46 74 36 60 36 C42 36 26 54 28 80 C30 114 72 142 100 162"
+          stroke-width="3.2"/>
+
+    <!-- Cord going up-left to plug -->
+    <path d="M92 58 Q85 44 80 32" stroke-width="3"/>
+    <!-- Plug body -->
+    <rect x="68" y="28" width="24" height="9" rx="2.5" stroke-width="2.8"/>
+    <!-- Plug prongs -->
+    <line x1="74" y1="20" x2="74" y2="28" stroke-width="2.8"/>
+    <line x1="86" y1="20" x2="86" y2="28" stroke-width="2.8"/>
+
+    <!-- Cord going up-right connecting to dryer -->
+    <path d="M108 58 Q114 46 118 36" stroke-width="3"/>
+
+    <!-- HAIR DRYER (top right) -->
+    <!-- Dryer body -->
+    <path d="M116 34 Q130 22 152 26 Q170 30 172 48 Q174 64 160 72 Q148 78 136 72 Q124 66 116 54 Q112 46 116 34Z"
+          stroke-width="2.8"/>
+    <!-- Nozzle pointing left -->
+    <path d="M118 60 L104 67 L106 76 L122 68" stroke-width="2.5"/>
+    <!-- Dryer handle going down -->
+    <path d="M152 74 Q156 88 152 100 Q150 108 154 114" stroke-width="3"/>
+    <!-- Vent lines on dryer -->
+    <line x1="138" y1="36" x2="140" y2="46" stroke-width="1.8"/>
+    <line x1="144" y1="33" x2="146" y2="43" stroke-width="1.8"/>
+    <line x1="150" y1="31" x2="152" y2="41" stroke-width="1.8"/>
+
+    <!-- COMB (left inside heart, horizontal) -->
+    <rect x="28" y="90" width="50" height="11" rx="2.5" stroke-width="2.8"/>
+    <!-- Teeth pointing down -->
+    <line x1="35" y1="101" x2="35" y2="118" stroke-width="2.2"/>
+    <line x1="40" y1="101" x2="40" y2="118" stroke-width="2.2"/>
+    <line x1="45" y1="101" x2="45" y2="118" stroke-width="2.2"/>
+    <line x1="50" y1="101" x2="50" y2="118" stroke-width="2.2"/>
+    <line x1="55" y1="101" x2="55" y2="118" stroke-width="2.2"/>
+    <line x1="60" y1="101" x2="60" y2="118" stroke-width="2.2"/>
+    <line x1="65" y1="101" x2="65" y2="118" stroke-width="2.2"/>
+    <line x1="70" y1="101" x2="70" y2="118" stroke-width="2.2"/>
+
+    <!-- SCISSORS (center-bottom, open and crossed) -->
+    <!-- Upper scissor tips -->
+    <path d="M97 112 L90 96" stroke-width="2.8"/>
+    <path d="M103 112 L110 96" stroke-width="2.8"/>
+    <!-- Pivot screw -->
+    <circle cx="100" cy="115" r="3.5" fill="#B07D6C" stroke="none"/>
+    <!-- Lower blades to rings -->
+    <path d="M100 118 L82 144" stroke-width="2.8"/>
+    <path d="M100 118 L118 144" stroke-width="2.8"/>
+    <!-- Finger rings -->
+    <circle cx="78" cy="151" r="9" stroke-width="2.5"/>
+    <circle cx="122" cy="151" r="9" stroke-width="2.5"/>
+
+  </g>
+</svg>
