@@ -55,11 +55,11 @@ Come as you are. Leave as you've always wanted to be.`,
     console.log('Stylist profile created')
   }
 
-  // Always reset services with real prices
-  // Must delete bookings first (FK constraint)
-  await prisma.booking.deleteMany({})
-  await prisma.service.deleteMany({})
-
+  // Seed services only if none exist yet
+  const serviceCount = await prisma.service.count()
+  if (serviceCount > 0) {
+    console.log('Services already exist — skipping')
+  } else {
   await prisma.service.createMany({
     data: [
       // ── Main Services ──────────────────────────────────────────
@@ -204,6 +204,7 @@ Come as you are. Leave as you've always wanted to be.`,
     ],
   })
   console.log('Services seeded with real prices')
+  } // end if serviceCount === 0
 
   // Seed time slot configs
   const slotConfigCount = await prisma.timeSlotConfig.count()
