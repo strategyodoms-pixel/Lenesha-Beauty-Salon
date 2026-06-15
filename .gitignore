@@ -40,7 +40,4 @@ next-env.d.ts
 /prisma/*.db
 /prisma/*.db-journal
 
-# Site images (stored locally — do not commit)
-/public/hero.jpg
-/public/owner.jpg
-/public/owner.png
+# Local env files only — images are committed for Vercel static hosting
