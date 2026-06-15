@@ -1,4 +1,5 @@
 {
+  "framework": "nextjs",
   "buildCommand": "npx prisma generate && npx prisma db push && npm run db:seed && next build",
   "installCommand": "npm install"
 }
