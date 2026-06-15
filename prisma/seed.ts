@@ -41,15 +41,16 @@ async function main() {
   if (!existingProfile) {
     await prisma.stylistProfile.create({
       data: {
-        bio: `With years of experience behind the chair, Nesh has built a reputation for transformative hair experiences that leave clients feeling confident, radiant, and truly themselves.
+        photoUrl: '/owner.png',
+        bio: `Lanesha's love for hair started long before she ever stood behind a chair. Growing up, she learned the art of styling from her brothers, discovering early that hair was more than a skill — it was a way to connect, create, and build confidence in others.
 
-Specializing in relaxers, color, braids, extensions, and natural hair care, Nesh brings a rare combination of artistry and technical mastery to every appointment.
+By middle school, Lanesha was already doing hair for friends and family, drawn to the transformation that happens when someone looks in the mirror and truly loves what they see. That spark never faded.
 
-Whether you're looking for a fresh cut and blow dry, a stunning sew-in, or intricate design braids, Nesh brings creativity, precision, and genuine care to every chair.
+With over four decades behind the chair, Lanesha has mastered everything from relaxers and color to braids, extensions, sew-ins, and natural hair care. Every client who sits in her chair gets her full attention, creativity, and heart.
 
-Her philosophy is simple: great hair begins with listening. No two clients are the same, and every appointment starts with a thoughtful consultation to understand your vision.
+But Lanesha's vision goes beyond the salon. She is passionate about teaching the next generation of stylists and has dreams of developing her own product line — built on the same principles she has lived by for 40 years: quality, care, and transformation.
 
-Come as you are. Leave as you've always wanted to be.`,
+When you book with Lanesha, you are not just getting a hairstyle. You are getting four decades of passion in every strand.`,
       },
     })
     console.log('Stylist profile created')
@@ -228,16 +229,16 @@ Come as you are. Leave as you've always wanted to be.`,
       data: [
         {
           clientFirstName: 'Jasmine',
-          serviceReceived: 'Permanent Color',
+          serviceReceived: 'Silk Press',
           rating: 5,
-          quote: "Nesh is nothing short of a hair magician. I came in with a vague idea and left with the most beautiful color I've ever had. I'll never go anywhere else.",
+          quote: 'She was amazing! I love my silk press. I was so silky and im natural. I love it!',
           isVisible: true,
         },
         {
           clientFirstName: 'Monica',
-          serviceReceived: 'Formal Up Do',
+          serviceReceived: 'Silk Press',
           rating: 5,
-          quote: 'I cannot say enough wonderful things about my wedding day hair. Nesh listened to everything I wanted and made me look absolutely stunning.',
+          quote: 'When I come in she knows exactly what to do. She always understand the assignment. Book her now!',
           isVisible: true,
         },
         {
